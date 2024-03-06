@@ -29,8 +29,10 @@ def bfs(graph, start):
     return path
 
 
+
 dfs_path = dfs(G, "Прадід")
 bfs_path = bfs(G, "Прадід")
 
-print(f"DFS path: {dfs_path}")
-print(f"BFS path: {bfs_path}")
+
+print(f"DFS шлях: {dfs_path}")
+print(f"BFS шлях: {bfs_path}")

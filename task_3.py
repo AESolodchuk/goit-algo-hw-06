@@ -1,10 +1,11 @@
 from task_1 import *
 import matplotlib.pyplot as plt
+import networkx
 
 
 def dijkstra(graph, start):
     # Ініціалізація відстаней та множини невідвіданих вершин
-    distances = {vertex: float('infinity') for vertex in graph}
+    distances = {vertex: float("infinity") for vertex in graph}
     distances[start] = 0
     unvisited = list(graph.keys())
 
@@ -13,7 +14,7 @@ def dijkstra(graph, start):
         current_vertex = min(unvisited, key=lambda vertex: distances[vertex])
 
         # Якщо поточна відстань є нескінченністю, то ми завершили роботу
-        if distances[current_vertex] == float('infinity'):
+        if distances[current_vertex] == float("infinity"):
             break
 
         for neighbor, weight in graph[current_vertex].items():
@@ -28,8 +29,9 @@ def dijkstra(graph, start):
 
     return distances
 
-# Приклад графа у вигляді словника
+# Застосування алгоритму Дейкстри
+shortest_paths = nx.single_source_dijkstra_path(G, source='Я')
+shortest_path_lengths = nx.single_source_dijkstra_path_length(G, source='Я')
 
-
-# Виклик функції для вершини A
-print(dijkstra(G, 'Прадід'))
+#print(shortest_paths)  # виведе найкоротші шляхи від вузла 'A' до всіх інших вузлів
+print(dijkstra(shortest_path_lengths,'Я'))  # виведе довжини найкоротших шляхів від вузла 'A' до всіх інших вузлів
