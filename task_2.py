@@ -29,6 +29,7 @@ def bfs(graph, start):
     return path
 
 
+
 dfs_path = dfs(G, "Прадід")
 bfs_path = bfs(G, "Прадід")
 
